@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="euc-kr">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+        <title>Go APP</title>
+        <!--BootStrap-->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <style>
+        ._page-type {display: none;}
+        .color-main {color: #76dc99;}
+        </style>
+    </head>
+
+    <body style="margin:10px 0;">
+        <div class="container-fluid">
+            
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <p id="userAgentDisp"></p>
+                 </div><!-- /.col-lg-12 -->
+                 <div class="col-lg-12">
+
+                    <h4>서버 선택</h4>
+                    <select class="form-control" id="serverEnv">
+                      <option value="test.wemakeprice.com">TEST</option>
+                      <option value="m.wemakeprice.com">REAL</option>
+                    </select>
+                    <h4>유형 선택</h4>
+                    <select class="form-control" id="cmdLinkType">
+                      <option value="1" data-placeholder="입력불필요">앱 실행</option>
+                      <option value="2">외부 브라우저에 url 랜딩</option>
+                      <option value="9">내부 브라우저에 url 랜딩</option>
+                      <option value="5" data-placeholder="딜 아이디를 입력하세요">딜상세 랜딩 : 딜아이디 입력</option>
+                      <option value="10" data-placeholder="기획전 상세 URL을 입력하세요">기획전 랜딩</option>
+                      <option value="11" data-placeholder="이벤트 아이디를 입력하세요">이벤트 페이지 랜딩</option>
+                    </select>
+                    <h4 class="_page-type">페이지타입</h4>
+                    <select class="form-control _page-type" id="cmdValueType">
+                      <option value="event" selected>이벤트</option>
+                      <option value="url">URL</option>
+                    </select>
+                    <h4>딜ID or 이벤트ID</h4>
+                    <div class="input-group" data-id="btnGoAppGroup">
+                      <input type="text" class="form-control" placeholder="입력" id="customLinkUrl">
+                      <span class="input-group-btn">
+                        <button class="btn btn-default btn-danger" type="button" id="btnGo2AppCust" data-val-target="#customLinkUrl">
+                          <span class="glyphicon glyphicon-align-left" aria-hidden="true"></span>
+                          Go
+                        </button>
+                      </span>
+                    </div><!-- /input-group -->
+                 </div><!-- /.col-lg-12 -->
+                 <div class="col-lg-12" id="cpnsContainer"></div><!-- /.col-lg-12 -->
+            </div>
+        </div>
+        <!-- Handlebars Templates-->
+        <script id="cpns" type="text/x-handlebars-template">
+        <div>isAndroid : {{title}}</div>
+        </script>
+        <!-- //Handlebars Templates-->
+        <script type="text/javascript" src="js/dist/app.js"></script>
+        <!-- //Clipboard JS Library-->
+    </body>
+
+</html>
